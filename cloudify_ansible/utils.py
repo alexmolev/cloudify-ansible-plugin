@@ -154,6 +154,10 @@ def handle_file_path(file_path, additional_playbook_files, _ctx):
             if _ctx.workflow_id == 'update':
                 deployment_blueprint = \
                     _get_deployment_blueprint(_ctx.deployment.id)
+            # TODO: Change this to support visibility.
+            # https://github.com/cloudify-cosmo/cloudify-common/
+            # blob/d37d7a4c04cf811b48f72c3d5e1be92b97e83dc0/
+            # cloudify/manager.py#L323
             file_path = \
                 BP_INCLUDES_PATH.format(
                     tenant=_ctx.tenant_name,
